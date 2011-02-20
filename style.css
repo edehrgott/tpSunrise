@@ -1,0 +1,463 @@
+﻿/*
+Theme Name: Tekpals Liquid
+Theme URI: www.tekpals.com
+Description: 3 column theme, vertical menu on left, sidebar on right, liquid center column
+Version: 1.0
+Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
+Tags: three-columns, vertical menu, liquid, variable-width
+
+*/  
+
+#masthead {
+    background: #180509;
+}
+#search { /*remove if not needed in final */
+	float: right;
+	padding-right: 10px;
+	padding-left: 20px;
+	padding-top: 95px;
+	top: 0px;
+	height: 35px;
+	z-index: 1;
+}
+#page_title {
+	background: #180509;
+	height: 45px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: rgb(255, 255, 204);
+	font-size: x-large;
+	font-weight: bold;
+	text-indent: 15px;
+	text-align: left;
+	line-height: 45px;
+}
+#wrapper1 {
+	position: relative;
+	text-align: left;
+	width: 100%;
+}
+#wrapper2 {
+	float: left;
+	position: relative;
+	text-align: left;
+	width: 100%;
+	background-image: url("images/l_col_bg.gif");
+	background-repeat: repeat-y;
+	background-position: top left;
+}
+#container {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#page_content {
+	position: relative;
+	top: 5px;
+	padding: 0 210px;
+	line-height: 1.4em;
+}
+#left_col {
+    position: relative;
+    float: left;
+	top: 0px;
+	left: 0px;
+	margin: 0 0 -10px 0;
+	z-index: 100;
+	width: 200px;
+}
+#right_col {
+	position: relative;
+	top: 0px;
+	right: 0px;
+	margin: 0 0 -10px 0;
+	width: 190px;
+	float: right;
+	font-size: x-small;
+	padding: 10px;
+	z-index: 99;
+	line-height: 1.4em;
+}
+#right_col table {
+	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+	background-color: rgb(245, 222, 179);
+}
+.brown_table_head {  /*for right col table headers*/
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background-color: rgb(139, 54, 38);
+	font-size: small;
+	font-weight: bold;
+	height: 35px;
+}
+.green_table_head {  /*for right col table headers*/
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background-color: rgb(102, 107, 35);
+	font-size: small;
+	font-weight: bold;
+	height: 35px;
+}
+.yellow_table_head {  /*for right col table headers*/
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background-color: rgb(218, 165, 32);
+	font-size: small;
+	font-weight: bold;
+	height: 35px;
+}
+#right_col p{
+	padding: 2px 0px 16px 0px;
+    font-size: 1.0em;
+	margin: 0px;
+	}
+#right_col h2 {
+	font-size: 1.0em;
+}
+#right_col ul {
+	list-style: none;
+    font-size: .9em;
+	margin: 0px;
+	padding: 0px 0px 20px 0px;
+	}
+	
+#right_col ul li {
+	list-style: none;
+	margin: 0px;
+	padding: 5px 0px 0px 0px;
+	}
+	
+#right_col ul li a {
+	color: #507AA5;
+	text-decoration: none;
+	}
+
+#right_col ul li a:hover {
+	color: #507AA5;
+	text-decoration: underline;
+	}
+#footer {
+    clear: both;
+    height: 43px;
+    width: 100%;
+}
+#footer_txt {
+	background: rgb(255, 255, 255);
+	background-image: url('images/footer_bg1.gif');
+	height: 18px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: rgb(0, 0, 0);
+	font-size: x-small;
+	text-align: center;
+	line-height: 18px;
+}
+#footer_graphic {
+    background: rgb(255, 255, 255);
+    background-image: url('images/footer_bg2.gif');
+   	line-height: 25px;
+}
+/* text styles */
+.center {
+	text-align: center;
+}
+.text_box {
+	border-style: solid;
+	border-width: 1px;
+	padding: 4px;
+}
+.indent1 {
+	margin-left: 40px;
+}
+.indent2 {
+	margin-left: 80px;
+}
+.indent3 {
+	margin-left: 120px;
+}
+.caption {
+    font-size: x-small;
+}
+/* common formatting */
+body {
+    background: rgb(255, 255, 255);
+	font-family: Arial, Helvetica, sans-serif;
+	color: #180509;
+	font-style: normal;
+	font-weight: normal;
+	font-size: small;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #180509;
+	font-size: large;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #180509;
+	font-size: medium;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #180509;
+	font-size: small;
+}
+h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgb(0, 0, 0);
+}
+h5 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgb(0, 0, 0);
+}
+h6 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgb(0, 0, 0);
+}
+li {
+    font-family: Arial, Helvetica, sans-serif;
+   	color: rgb(0, 0, 0);
+    font-size: small;
+}
+ul {
+	list-style-image: url(/images/bullet01.gif);
+	overflow: hidden;
+}
+ul ul {
+	list-style-image: url(/images/bullet02.gif);
+	overflow: hidden;
+}
+ul ul ul {
+	list-style-image: url(/images/bullet03.gif);
+	overflow: hidden;
+}
+hr {
+    color: #180509;
+}
+a.ovalbutton{
+	background: transparent url('/images/oval-orange-left.gif') no-repeat top left;
+	display: block;
+	float: inherit;
+	font: normal 13px Tahoma; /* Change 13px as desired */
+	line-height: 16px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 24px) */
+	height: 24px; /* Height of button background height */
+	padding-left: 11px; /* Width of left menu image */
+	text-decoration: none;
+}
+
+a:link.ovalbutton, a:visited.ovalbutton, a:active.ovalbutton{
+color: #494949; /*button text color*/
+}
+
+a.ovalbutton span{
+background: transparent url('/images/oval-orange-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0; /*Set 11px below to match value of 'padding-left' value above*/
+}
+
+a.ovalbutton:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.ovalbutton:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: black;
+}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+width: 100%;
+}
+#relaxmenu {
+	float: inherit;
+	text-align: center;
+}
+#relaxmenu a {
+	display: block;
+	height: 200px;
+	width: 633px;
+	background: url(images/body_button.jpg) 0 0 no-repeat;
+}
+#relaxmenu a:hover {
+	background-position: 0px -200px;
+}
+#pleasuremenu {
+	float: inherit;
+	text-align: center;
+}
+#pleasuremenu a {
+	display: block;
+	height: 200px;
+	width: 633px;
+	background: url(images/pleasure_button.jpg) 0 0 no-repeat;
+}
+#pleasuremenu a:hover {
+	background-position: 0px -200px;
+}
+#passionmenu {
+	float: inherit;
+	text-align: center;
+}
+#passionmenu a {
+	display: block;
+	height: 200px;
+	width: 633px;
+	background: url(images/passion_button.jpg) 0 0 no-repeat;
+}
+#passionmenu a:hover {
+	background-position: 0px -200px;
+}
+/* Wordpress integration */
+#content {
+	width: 820px;
+	margin: 0px auto 0px;
+	padding: 0px;
+	}
+
+#content p{
+	padding: 0px 0px 15px 0px;
+	margin: 0px;
+	line-height: 20px;
+	}
+	
+#content p img{
+	float: left;
+	border: none;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	}
+	
+#content h1 {
+	color: #333333;
+	font-size: 22px;
+	font-weight: normal;
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	}
+	
+#content h1 a  {
+	color: #333333;
+	text-decoration: none;
+	}
+
+#content h1 a:hover {
+	color: #658DB5;
+	text-decoration: none;
+	}
+	
+#content h2 {
+	color: #333333;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+	border-top: 1px dotted #C0C0C0;
+	border-bottom: 1px dotted #C0C0C0;
+	}
+	
+blockquote{
+	margin: 0px 25px 15px 25px;
+	padding: 0px 25px 0px 10px;
+	background: #E8E8E8;
+	border-top: 2px solid #000000;
+	border-bottom: 1px solid #000000;
+	}
+	
+#content blockquote p{
+	margin: 0px 0px 10px 0px;
+	padding: 10px 0px 0px 0px;
+	}
+
+#contentmiddle {
+	float: left;
+	width: 95%;
+	margin: 0px 0px 0px 0px;
+	padding: 20px 20px 10px 20px;
+	display: block;
+	}
+	
+#contentmiddle p img{
+	float: left;
+	border: none;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	}
+	
+#contentmiddle ol{
+	margin: 0px 0px 0px 20px;
+	padding: 0px 0px 10px 0px;
+	}
+	
+#contentmiddle ol li{
+	margin: 0px 0px 0px 20px;
+	padding: 0px 0px 5px 0px;
+	}
+	
+#contentmiddle ul{
+	list-style-type: square;
+	margin: 0px 0px 0px 20px;
+	padding: 0px 0px 10px 0px;
+	}
+	
+#contentmiddle ul li{
+	list-style-type: square;
+	margin: 0px 0px 0px 20px;
+	padding: 0px 0px 5px 0px;
+	}
+	
+.contentdate {
+	background: #FFFFFF url(images/cal.png);
+	repeat: none;
+	float: left;
+	width: 45px;
+	height: 50px;
+	margin: 0 4px 0 0;
+	padding: 0;
+	}
+	
+.contentdate h3 {
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: normal;
+	padding: 1px 0px 0px 10px;
+	margin: 0px;
+	text-transform: uppercase;
+	}
+	
+.contentdate h4 {
+	font-family: Times New Roman, Helvetica, Sans-Serif;
+	color: #999999;
+	font-size: 21px;
+	font-weight: bold;
+	padding: 5px 4px 0px 0px;
+	margin: 0px;
+	text-align: center;
+	}
+	
+.contenttitle {
+	/*width: 425px;*/
+	margin: 0px;
+	padding: 0px;
+	}
+	
+#content img.wp-smiley {
+	float: none;
+	border: none;
+	padding: 0px;
+	margin: 0 2px 0 0;
+	}
+
+#content img.wp-wink {
+	float: none;
+	border: none;
+	padding: 0px;
+	margin: 2px;
+	}
+	
+.postspace {
+	background: #EFEFEF url(images/spacer.gif);
+	width: 300px;
+	height: 32px;
+	margin: 0px;
+	padding: 0px;
+	}
