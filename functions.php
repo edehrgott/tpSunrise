@@ -24,7 +24,13 @@ wp_enqueue_script('jquery');
 
 // navigation menu
 if (function_exists('register_nav_menu')) {
-    register_nav_menu('primary', __('Menu''));
+    register_nav_menu('primary', __('Menu'));
 }
+
+add_theme_support('automatic-feed-links');
+
+if ( ! isset( $content_width ) ) $content_width = 700;
+
+add_filter('gallery_style', create_function('$a', 'return preg_replace("%<style type=\'text/css\'>(.*?)</style>%s", "", $a);'));
 
 ?>

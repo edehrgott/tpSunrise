@@ -3,7 +3,7 @@
     <div id="nav">
 	<?php
 	if( (is_front_page()) ) {  // for home page only 
-	    include('nav_background_alt.php'); // remove background color using jQuery
+	    get_template_part( 'nav_background_alt'); // remove background color using jQuery
 	}
 	?>
 

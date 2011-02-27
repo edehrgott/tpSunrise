@@ -4,7 +4,7 @@
 <div id="wrapper2">
 	    <div id="container">
 
-			<?php include('nav.php'); // left column navigation ?>
+			<?php get_template_part( 'nav' ) ; // left column navigation ?>
 		
 	        <?php get_sidebar(); ?> 
 
@@ -19,5 +19,5 @@
 	</div> <!-- wrapper2 -->  
 </div> <!-- wrapper1 -->
 
-<!-- The main column ends  -->
-
+</body>
+</html>

@@ -1,35 +1,62 @@
 ﻿/*
-Theme Name: Tekpals Liquid
-Theme URI: www.tekpals.com
-Description: 3 column theme, vertical menu on left, sidebar on right, liquid center column
-Version: 1.0
+Theme Name: tpSunrise
+Theme URI: http://www.tekpals.com/tpsunrise
+Description: tpSunrise is a 3 column theme with a vertical menu on the left. The theme supports a widgetized sidebar on right and a flexible center column that automatically adjusts for the window width. The theme supports different header and sidebar styles for the home page. Requires WordPress 3.0+
+Version: 0.9
 Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
-Tags: three-columns, vertical menu, liquid, variable-width
-
+Author URI: http://www.tekpals.com
+Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */  
 
+/*** COMMON FORMATTING ***/
+body {
+    background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #646464;
+	font-style: normal;
+	font-weight: normal;
+	font-size: small;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #646464;
+	font-size: large;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #646464;
+	font-size: medium;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #646464;
+	font-size: small;
+}
+hr {
+    color: #180509;
+}
+/*** DIVS ***/
 #masthead {
     background: #180509;
 }
-#search { /*remove if not needed in final */
-	float: right;
-	padding-right: 10px;
-	padding-left: 20px;
-	padding-top: 95px;
-	top: 0px;
-	height: 35px;
-	z-index: 1;
+#masthead h1 {
+	position: absolute;
+	top: 35px;
+	left: 40px;
 }
-#page_title {
-	background: #180509;
-	height: 45px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	color: rgb(255, 255, 204);
-	font-size: x-large;
-	font-weight: bold;
-	text-indent: 15px;
-	text-align: left;
-	line-height: 45px;
+#masthead a {
+	color: #180509;
+	font-size: 1.7em;
+	text-decoration: none;
+}
+#masthead h2 {
+	position: absolute;
+	top: 85px;
+	left: 40px;
+	color: #180509;
+	font-size: 1.2em;
 }
 #wrapper1 {
 	position: relative;
@@ -77,47 +104,9 @@ Tags: three-columns, vertical menu, liquid, variable-width
 	z-index: 99;
 	line-height: 1.4em;
 }
-#right_col table {
-	width: 100%;
-	border-style: solid;
-	border-width: 1px;
-	background-color: rgb(245, 222, 179);
-}
-.brown_table_head {  /*for right col table headers*/
-	text-align: center;
-	color: rgb(255, 255, 255);
-	background-color: rgb(139, 54, 38);
-	font-size: small;
-	font-weight: bold;
-	height: 35px;
-}
-.green_table_head {  /*for right col table headers*/
-	text-align: center;
-	color: rgb(255, 255, 255);
-	background-color: rgb(102, 107, 35);
-	font-size: small;
-	font-weight: bold;
-	height: 35px;
-}
-.yellow_table_head {  /*for right col table headers*/
-	text-align: center;
-	color: rgb(255, 255, 255);
-	background-color: rgb(218, 165, 32);
-	font-size: small;
-	font-weight: bold;
-	height: 35px;
-}
-#right_col p{
-	padding: 2px 0px 16px 0px;
-    font-size: 1.0em;
-	margin: 0px;
-	}
-#right_col h2 {
-	font-size: 1.0em;
-}
 #right_col ul {
 	list-style: none;
-    font-size: .9em;
+    font-size: 1.0em;
 	margin: 0px;
 	padding: 0px 0px 20px 0px;
 	}
@@ -146,18 +135,242 @@ Tags: three-columns, vertical menu, liquid, variable-width
 	background: rgb(255, 255, 255);
 	background-image: url('images/footer_bg1.gif');
 	height: 18px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	color: rgb(0, 0, 0);
+	color: #180509;
 	font-size: x-small;
 	text-align: center;
 	line-height: 18px;
 }
 #footer_graphic {
-    background: rgb(255, 255, 255);
     background-image: url('images/footer_bg2.gif');
    	line-height: 25px;
 }
-/* text styles */
+/*** SUPERFISH MENU ***/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu {
+	line-height:	1.0;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			10em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			2.5em; /* match top ul list item height */
+	z-index:		99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+/*** MENU SKIN ***/
+.sf-menu {
+	float:			left;
+	margin-bottom:	1em;
+}
+.sf-menu a {
+	border-left:	1px solid #fff;
+	border-top:		1px solid #CFDEFF;
+	padding: 		.75em 1em;
+	text-decoration:none;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color:			#13a;
+}
+.sf-menu li {
+	background: #F2BE76 url(images/gradient_31.gif);
+}
+.sf-menu li li {
+	background: #F5DEB3;
+}
+.sf-menu li li li {
+	background: #F5DEB3;
+
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background: #F2BE76;
+	outline:		0;
+}
+/*** SUPERFISH VERTICAL MENU ***/
+.sf-vertical, .sf-vertical li {
+	width: 200px;
+}
+.sf-vertical, .sf-vertical li li {
+	width: 127px;
+	position: relative;
+	z-index: 999;
+	overflow:visible !important;
+}
+/* this lacks ul at the start of the selector, so the styles from the main CSS file override it where needed */
+.sf-vertical li:hover ul,
+.sf-vertical li.sfHover ul {
+	left:	13em; /* match ul width */
+	top:	0;
+}
+
+/*** alter arrow directions ***/
+.sf-vertical .sf-sub-indicator { background-position: -10px 0; } /* IE6 gets solid image only */
+.sf-vertical a > .sf-sub-indicator { background-position: 0 0; } /* use translucent arrow for modern browsers*/
+
+/* hover arrow direction for modern browsers*/
+.sf-vertical a:focus > .sf-sub-indicator,
+.sf-vertical a:hover > .sf-sub-indicator,
+.sf-vertical a:active > .sf-sub-indicator,
+.sf-vertical li:hover > a > .sf-sub-indicator,
+.sf-vertical li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** MENU SUB INDICATIOR ***/
+.sf-menu a.sf-with-ul {
+	padding-right: 	2.25em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		block;
+	right:			.75em;
+	top:			1.05em; /* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url('images/arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values 
+	top:			.8em;
+	background-position: 0 -100px; /* use translucent arrow for modern browsers */
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+.sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+	background:	url('images/shadow.png') no-repeat bottom right;
+	padding: 0 8px 9px 0;
+	-moz-border-radius-bottomleft: 17px;
+	-moz-border-radius-topright: 17px;
+	-webkit-border-top-right-radius: 17px;
+	-webkit-border-bottom-left-radius: 17px;
+}
+.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}
+
+/*** IMAGE STYLES ***/
+.alignleft {
+	float: left;
+	padding-right: 5px;
+	border: none;
+}
+.alignright {
+	float: right;
+	padding-left: 5px;
+	border: none;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+}
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;}.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+.gallery-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+}
+/*** GALLERY STYLES TO CORRECT WP INSERTING INLINE CSS FROM [GALLERY] SHORTCODE ***/
+#gallery-1 {
+	margin: auto;
+}
+#gallery-1 .gallery-item {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 33%;
+}
+#gallery-1 img {
+	border: 2px solid #cfcfcf;
+}
+#gallery-1 .gallery-caption {
+	margin-left: 0;
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+/*** text styles */
 .center {
 	text-align: center;
 }
@@ -178,286 +391,57 @@ Tags: three-columns, vertical menu, liquid, variable-width
 .caption {
     font-size: x-small;
 }
-/* common formatting */
-body {
-    background: rgb(255, 255, 255);
-	font-family: Arial, Helvetica, sans-serif;
-	color: #180509;
-	font-style: normal;
-	font-weight: normal;
-	font-size: small;
-}
-h1 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #180509;
-	font-size: large;
-}
-h2 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #180509;
-	font-size: medium;
-}
-h3 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #180509;
-	font-size: small;
-}
-h4 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: rgb(0, 0, 0);
-}
-h5 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: rgb(0, 0, 0);
-}
-h6 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: rgb(0, 0, 0);
-}
-li {
-    font-family: Arial, Helvetica, sans-serif;
-   	color: rgb(0, 0, 0);
-    font-size: small;
-}
-ul {
-	list-style-image: url(/images/bullet01.gif);
-	overflow: hidden;
-}
-ul ul {
-	list-style-image: url(/images/bullet02.gif);
-	overflow: hidden;
-}
-ul ul ul {
-	list-style-image: url(/images/bullet03.gif);
-	overflow: hidden;
-}
-hr {
-    color: #180509;
-}
-a.ovalbutton{
-	background: transparent url('/images/oval-orange-left.gif') no-repeat top left;
-	display: block;
-	float: inherit;
-	font: normal 13px Tahoma; /* Change 13px as desired */
-	line-height: 16px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 24px) */
-	height: 24px; /* Height of button background height */
-	padding-left: 11px; /* Width of left menu image */
-	text-decoration: none;
-}
-
-a:link.ovalbutton, a:visited.ovalbutton, a:active.ovalbutton{
-color: #494949; /*button text color*/
-}
-
-a.ovalbutton span{
-background: transparent url('/images/oval-orange-right.gif') no-repeat top right;
-display: block;
-padding: 4px 11px 4px 0; /*Set 11px below to match value of 'padding-left' value above*/
-}
-
-a.ovalbutton:hover{ /* Hover state CSS */
-background-position: bottom left;
-}
-
-a.ovalbutton:hover span{ /* Hover state CSS */
-background-position: bottom right;
-color: black;
-}
-
-.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
-overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
-width: 100%;
-}
-#relaxmenu {
-	float: inherit;
-	text-align: center;
-}
-#relaxmenu a {
-	display: block;
-	height: 200px;
-	width: 633px;
-	background: url(images/body_button.jpg) 0 0 no-repeat;
-}
-#relaxmenu a:hover {
-	background-position: 0px -200px;
-}
-#pleasuremenu {
-	float: inherit;
-	text-align: center;
-}
-#pleasuremenu a {
-	display: block;
-	height: 200px;
-	width: 633px;
-	background: url(images/pleasure_button.jpg) 0 0 no-repeat;
-}
-#pleasuremenu a:hover {
-	background-position: 0px -200px;
-}
-#passionmenu {
-	float: inherit;
-	text-align: center;
-}
-#passionmenu a {
-	display: block;
-	height: 200px;
-	width: 633px;
-	background: url(images/passion_button.jpg) 0 0 no-repeat;
-}
-#passionmenu a:hover {
-	background-position: 0px -200px;
-}
-/* Wordpress integration */
-#content {
-	width: 820px;
-	margin: 0px auto 0px;
-	padding: 0px;
-	}
-
-#content p{
-	padding: 0px 0px 15px 0px;
-	margin: 0px;
-	line-height: 20px;
-	}
-	
-#content p img{
-	float: left;
-	border: none;
-	margin-right: 15px;
-	margin-bottom: 10px;
-	}
-	
-#content h1 {
-	color: #333333;
-	font-size: 22px;
-	font-weight: normal;
-	padding: 0px 0px 0px 0px;
-	margin: 0px;
-	}
-	
-#content h1 a  {
-	color: #333333;
-	text-decoration: none;
-	}
-
-#content h1 a:hover {
-	color: #658DB5;
-	text-decoration: none;
-	}
-	
-#content h2 {
-	color: #333333;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 5px 0px 5px 0px;
-	margin: 0px;
-	border-top: 1px dotted #C0C0C0;
-	border-bottom: 1px dotted #C0C0C0;
-	}
-	
 blockquote{
 	margin: 0px 25px 15px 25px;
 	padding: 0px 25px 0px 10px;
 	background: #E8E8E8;
 	border-top: 2px solid #000000;
 	border-bottom: 1px solid #000000;
-	}
-	
-#content blockquote p{
-	margin: 0px 0px 10px 0px;
-	padding: 10px 0px 0px 0px;
-	}
-
-#contentmiddle {
-	float: left;
-	width: 95%;
-	margin: 0px 0px 0px 0px;
-	padding: 20px 20px 10px 20px;
-	display: block;
-	}
-	
-#contentmiddle p img{
-	float: left;
-	border: none;
-	margin-right: 15px;
-	margin-bottom: 10px;
-	}
-	
-#contentmiddle ol{
-	margin: 0px 0px 0px 20px;
-	padding: 0px 0px 10px 0px;
-	}
-	
-#contentmiddle ol li{
-	margin: 0px 0px 0px 20px;
-	padding: 0px 0px 5px 0px;
-	}
-	
-#contentmiddle ul{
-	list-style-type: square;
-	margin: 0px 0px 0px 20px;
-	padding: 0px 0px 10px 0px;
-	}
-	
-#contentmiddle ul li{
-	list-style-type: square;
-	margin: 0px 0px 0px 20px;
-	padding: 0px 0px 5px 0px;
-	}
-	
+}
 .contentdate {
 	background: #FFFFFF url(images/cal.png);
-	repeat: none;
 	float: left;
 	width: 45px;
 	height: 50px;
-	margin: 0 4px 0 0;
+	margin: 0 10px 0 0;
 	padding: 0;
-	}
-	
+}
 .contentdate h3 {
 	color: #FFFFFF;
 	font-size: 10px;
 	font-weight: normal;
-	padding: 1px 0px 0px 10px;
+	padding: 1px 0px 0px 4px;
 	margin: 0px;
 	text-transform: uppercase;
-	}
-	
+}
 .contentdate h4 {
-	font-family: Times New Roman, Helvetica, Sans-Serif;
-	color: #999999;
+	color: #666666;
 	font-size: 21px;
 	font-weight: bold;
 	padding: 5px 4px 0px 0px;
 	margin: 0px;
 	text-align: center;
-	}
-	
+}
 .contenttitle {
-	/*width: 425px;*/
+	position: relative;
 	margin: 0px;
 	padding: 0px;
-	}
-	
-#content img.wp-smiley {
-	float: none;
-	border: none;
-	padding: 0px;
-	margin: 0 2px 0 0;
-	}
-
-#content img.wp-wink {
-	float: none;
-	border: none;
-	padding: 0px;
-	margin: 2px;
-	}
-	
+}
 .postspace {
 	background: #EFEFEF url(images/spacer.gif);
 	width: 300px;
 	height: 32px;
 	margin: 0px;
 	padding: 0px;
-	}
+}
+.sticky {
+	background: #F5DEB3;
+}
+li.bypostauthor {
+    /* CSS styles for author comments */
+}
+li.byuser {
+    /* CSS styles for registered users comments */
+}
+
+	

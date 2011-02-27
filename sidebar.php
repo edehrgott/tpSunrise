@@ -14,4 +14,6 @@
 	</ul>
 	</div>
 	
+	<?php wp_meta(); ?>
+	
 </div> <!-- right_col -->
