@@ -29,9 +29,6 @@ echo ' - page '. $paged;
 <?php }?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/print.css" type="text/css" media="print" />
-<!--[if IE]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/ie.css" type="text/css" media="screen, projection" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/ie7.css" type="text/css" media="screen, projection" /><![endif]-->
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php if ( get_option('gpp_feedburner_url') <> "" ) { echo get_option('gpp_feedburner_url'); } else { echo get_bloginfo_rss('rss2_url'); } ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	
@@ -45,11 +42,13 @@ echo ' - page '. $paged;
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
+<!--
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/hoverIntent.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/superfish.js"></script>
+-->
 
 <script type="text/javascript">
-// initialise superfish
+// initialise superfish menu
 jQuery(function(){
 	jQuery('ul.sf-menu').superfish();
 });

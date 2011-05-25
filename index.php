@@ -26,9 +26,9 @@
 					<div class="post-content">
 					<?php the_content(__('Read more', 'tpSunrise')); ?>
 					</div>
-					<?php trackback_rdf(); ?>
+					<!-- <?php trackback_rdf(); ?> -->
 					
-					<?php wp_link_pages();?>
+					<?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?>
 				</div>		
 						
 				<?php endwhile; else: ?>

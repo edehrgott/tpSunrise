@@ -9,8 +9,8 @@
 	        <?php get_sidebar(); ?> 
 
 			<div id="page_content">
-            <h2>Not Found</h2>
-			<p>Whoops! Whatever you are looking for cannot be found.</p>
+			<h2><?php _e('Not Found', 'tpSunrise'); ?></h2>
+			<p><?php _e('Whoops! Whatever you are looking for cannot be found.', 'tpSunrise'); ?></p>
             </div> <!-- page content -->
 		</div> <!-- container -->
 		

@@ -2,7 +2,7 @@
 Theme Name: tpSunrise
 Theme URI: http://www.tekpals.com/tpsunrise
 Description: tpSunrise is a 3 column theme with a vertical menu on the left. The theme supports a widgetized sidebar on right and a flexible center column that automatically adjusts for the window width. The theme supports different header and sidebar styles for the home page. Requires WordPress 3.0+
-Version: 0.9
+Version: 1.0
 Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
 Author URI: http://www.tekpals.com
 Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu
@@ -36,6 +36,30 @@ h3 {
 }
 hr {
     color: #180509;
+}
+table {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+table th {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+table td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
 }
 /*** DIVS ***/
 #masthead {
@@ -73,6 +97,7 @@ hr {
 	background-position: top left;
 }
 #container {
+	min-width: 950px;
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -99,10 +124,34 @@ hr {
 	margin: 0 0 -10px 0;
 	width: 190px;
 	float: right;
-	font-size: x-small;
+	font-size: small;
 	padding: 10px;
 	z-index: 99;
 	line-height: 1.4em;
+}
+#right_col table {
+	border-width: 0;
+	border-spacing: 0px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+#right_col table th {
+	border-width: 0;
+	padding: 2px;
+	border-style: solid;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+#right_col table td {
+	border-width: 0;
+	padding: 2px;
+	border-style: solid;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
 }
 #right_col ul {
 	list-style: none;
@@ -310,12 +359,14 @@ li.sfHover > a > .sf-sub-indicator {
 }
 
 /*** IMAGE STYLES ***/
-.alignleft {
+.alignleft img.alignleft {
+	display: block;
 	float: left;
 	padding-right: 5px;
 	border: none;
 }
-.alignright {
+.alignright img.alignright {
+	display: block;
 	float: right;
 	padding-left: 5px;
 	border: none;

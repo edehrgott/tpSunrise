@@ -13,10 +13,11 @@
                     <h1><?php the_title(); ?></h1>
 	                <?php the_content(__('Read more', 'tpSunrise'));?>
 	                <!-- <?php trackback_rdf(); ?> -->
+			<?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?>
 	            <?php endwhile; else: ?>
 	            <p><?php _e('Sorry, no posts matched your criteria.', 'tpSunrise'); ?></p><?php endif; ?>
 				
-		        <?php if (comments_open()) comments_template(); // Get wp-comments.php template ?>
+		        <?php comments_template(); // Get wp-comments.php template ?>
 
             </div> <!-- page content -->
 		</div> <!-- container -->
