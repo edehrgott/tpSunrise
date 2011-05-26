@@ -51,7 +51,6 @@ table th {
 	border-style: solid;
 	border-color: gray;
 	background-color: white;
-	-moz-border-radius: ;
 }
 table td {
 	border-width: 1px;
@@ -59,7 +58,6 @@ table td {
 	border-style: solid;
 	border-color: gray;
 	background-color: white;
-	-moz-border-radius: ;
 }
 /*** DIVS ***/
 #masthead {
@@ -104,9 +102,14 @@ table td {
 }
 #page_content {
 	position: relative;
+	overflow: hidden;
 	top: 5px;
-	padding: 0 210px;
+	padding: 0 15px;
 	line-height: 1.4em;
+}
+#comments {
+   position:relative;
+   clear:both;
 }
 #left_col {
     position: relative;
@@ -143,7 +146,6 @@ table td {
 	border-style: solid;
 	border-color: gray;
 	background-color: white;
-	-moz-border-radius: ;
 }
 #right_col table td {
 	border-width: 0;
@@ -151,11 +153,10 @@ table td {
 	border-style: solid;
 	border-color: gray;
 	background-color: white;
-	-moz-border-radius: ;
 }
 #right_col ul {
 	list-style: none;
-    font-size: 1.0em;
+        font-size: 1.0em;
 	margin: 0px;
 	padding: 0px 0px 20px 0px;
 	}
@@ -192,6 +193,9 @@ table td {
 #footer_graphic {
     background-image: url('images/footer_bg2.gif');
    	line-height: 25px;
+}
+.pagenav {
+   text-align: center;
 }
 /*** SUPERFISH MENU ***/
 .sf-menu, .sf-menu * {
@@ -359,13 +363,13 @@ li.sfHover > a > .sf-sub-indicator {
 }
 
 /*** IMAGE STYLES ***/
-.alignleft img.alignleft {
+.alignleft, img.alignleft, a img.alignleft {
 	display: block;
 	float: left;
 	padding-right: 5px;
 	border: none;
 }
-.alignright img.alignright {
+.alignright, img.alignright, a img.alignright {
 	display: block;
 	float: right;
 	padding-left: 5px;

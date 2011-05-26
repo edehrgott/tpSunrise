@@ -29,12 +29,12 @@ function tpSunrise_register_sidebars() {
 wp_enqueue_script('jquery');
 
 if ( !is_admin() ) { //superfish scripts aren't needed for admin area
-   // register the scripts
-   wp_register_script('superfish', get_bloginfo('template_directory') . '/js/superfish.js' );
-   wp_register_script('hoverIntent', get_bloginfo('template_directory') . '/js/hoverIntent.js' );
-   // enqueue the scripts
-   wp_enqueue_script('superfish');   
-   wp_enqueue_script('hoverIntent');
+	// register the scripts
+	wp_register_script('superfish', get_bloginfo('template_directory') . '/js/superfish.js' );
+	wp_register_script('hoverIntent', get_bloginfo('template_directory') . '/js/hoverIntent.js' );
+	// enqueue the scripts
+	wp_enqueue_script('superfish');   
+	wp_enqueue_script('hoverIntent');
 }
 
 // navigation menu
