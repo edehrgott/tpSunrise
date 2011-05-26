@@ -1,8 +1,8 @@
 <?php
 
-add_action( 'widgets_init', 'my_register_sidebars' );
+add_action( 'widgets_init', 'tpSunrise_register_sidebars' );
 
-function my_register_sidebars() {
+function tpSunrise_register_sidebars() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
 		'name' => 'Sidebar Primary',
@@ -14,6 +14,7 @@ function my_register_sidebars() {
 		'after_title' => '</h3>',
 	) );
 	
+	// Area 2, below area 1
 	register_sidebar( array(
 		'name' => 'Sidebar Secondary',
 		'id' => 'sidebar-secondary',
@@ -42,6 +43,8 @@ if (function_exists('register_nav_menu')) {
 }
 
 add_theme_support('automatic-feed-links');
+
+load_theme_textdomain( 'tpSunrise', TEMPLATEPATH . '/languages' );
 
 if (! isset( $content_width )) $content_width = 700;
 

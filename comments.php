@@ -17,7 +17,7 @@
 
 <?php if (have_comments()): ?>
 	<h4 id="comments">
-		<?php comments_number('No Comments', 'One Comment', '% Comments' );?>
+		<?php comments_number(__('No Comments', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise'));?>
 	</h4>
 	
 	<div class="pagenav">
@@ -41,7 +41,7 @@
 	<?php if (comments_open()): // If comments are open, but there are no comments. ?>
 	
 	<?php else: // comments are closed ?>
-		<p class="nocomments">Comments are closed.</p>
+		<p class="nocomments"><?php _e('Comments are closed.', 'tpSunrise');?></p>
 	<?php endif; ?>
 	
 <?php endif; ?>

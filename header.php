@@ -42,11 +42,6 @@ echo ' - page '. $paged;
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
-<!--
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/hoverIntent.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/superfish.js"></script>
--->
-
 <script type="text/javascript">
 // initialise superfish menu
 jQuery(function(){

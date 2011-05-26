@@ -5,9 +5,9 @@
 	    <?php
 	    if ( is_active_sidebar( 'sidebar-primary' ) ) : dynamic_sidebar( 'sidebar-primary' );
 	    else : //no primary sidebar so calll a few widgets 
-		    the_widget('WP_Widget_Search', $instance, $args);
-		    the_widget('WP_Widget_Categories', $instance, $args);
-		    the_widget('WP_Widget_Archives', $instance, $args);
+		    the_widget('WP_Widget_Search');
+		    the_widget('WP_Widget_Categories');
+		    the_widget('WP_Widget_Archives');
 	    endif; ?>
 	</ul>
 	</div>
