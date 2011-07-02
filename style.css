@@ -1,8 +1,8 @@
-﻿/*
+/*
 Theme Name: tpSunrise
 Theme URI: http://www.tekpals.com/tpsunrise
 Description: tpSunrise is a 3 column theme with a vertical menu on the left. The theme supports a widgetized sidebar on right and a flexible center column that automatically adjusts for the window width. The theme supports different header and sidebar styles for the home page. Requires WordPress 3.0+
-Version: 1.0
+Version: 1.1
 Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
 Author URI: http://www.tekpals.com
 Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu
@@ -39,25 +39,25 @@ hr {
 }
 table {
 	border-width: 1px;
-	border-spacing: 0px;
-	border-style: outset;
-	border-color: gray;
-	border-collapse: collapse;
-	background-color: white;
+	border-spacing: 0;
+
+	border-color: #180509;
+    font-style: normal;
+    font-weight: normal;
+    font-size: small;
 }
 table th {
 	border-width: 1px;
-	padding: 2px;
+	padding: 3px;
 	border-style: solid;
-	border-color: gray;
-	background-color: white;
+    color: #fffff4;
+	background: #180509;
 }
 table td {
 	border-width: 1px;
 	padding: 2px;
 	border-style: solid;
-	border-color: gray;
-	background-color: white;
+	border-color: #180509;
 }
 /*** DIVS ***/
 #masthead {
@@ -107,6 +107,13 @@ table td {
 	padding: 0 15px;
 	line-height: 1.4em;
 }
+.page-link {
+    clear: both;
+    padding-top: 10px;
+}
+.edit-link {
+    clear: both;    
+}
 #comments {
    position:relative;
    clear:both;
@@ -118,7 +125,7 @@ table td {
 	left: 0px;
 	margin: 0 0 -10px 0;
 	z-index: 100;
-	width: 200px;
+	/*width: 200px;*/
 }
 #right_col {
 	position: relative;
@@ -133,30 +140,14 @@ table td {
 	line-height: 1.4em;
 }
 #right_col table {
-	border-width: 0;
-	border-spacing: 0px;
-	border-style: outset;
-	border-color: gray;
-	border-collapse: collapse;
-	background-color: white;
+    text-align: center;
 }
-#right_col table th {
-	border-width: 0;
-	padding: 2px;
-	border-style: solid;
-	border-color: gray;
-	background-color: white;
-}
-#right_col table td {
-	border-width: 0;
-	padding: 2px;
-	border-style: solid;
-	border-color: gray;
-	background-color: white;
+#right_col td {
+    border-style: none;
 }
 #right_col ul {
-	list-style: none;
-        font-size: 1.0em;
+
+    font-size: 1.0em;
 	margin: 0px;
 	padding: 0px 0px 20px 0px;
 	}
@@ -283,7 +274,7 @@ ul.sf-menu li li li.sfHover ul {
 	width: 200px;
 }
 .sf-vertical, .sf-vertical li li {
-	width: 127px;
+	width: 200px;
 	position: relative;
 	z-index: 999;
 	overflow:visible !important;
@@ -412,7 +403,7 @@ li.sfHover > a > .sf-sub-indicator {
 	float: left;
 	margin-top: 10px;
 	text-align: center;
-	width: 33%;
+    width: auto;
 }
 #gallery-1 img {
 	border: 2px solid #cfcfcf;
@@ -449,12 +440,12 @@ li.sfHover > a > .sf-sub-indicator {
 blockquote{
 	margin: 0px 25px 15px 25px;
 	padding: 0px 25px 0px 10px;
-	background: #E8E8E8;
+	background: #FFF575;
 	border-top: 2px solid #000000;
 	border-bottom: 1px solid #000000;
 }
 .contentdate {
-	background: #FFFFFF url(images/cal.png);
+	background: url(images/cal.png);
 	float: left;
 	width: 45px;
 	height: 50px;
@@ -483,7 +474,7 @@ blockquote{
 	padding: 0px;
 }
 .postspace {
-	background: #EFEFEF url(images/spacer.gif);
+	background: url(images/spacer.png);
 	width: 300px;
 	height: 32px;
 	margin: 0px;
@@ -498,5 +489,16 @@ li.bypostauthor {
 li.byuser {
     /* CSS styles for registered users comments */
 }
-
-	
+.commentlist ul {
+    list-style: none;    
+}
+.commentlist .odd {
+    background-color: #F9DFA9;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.commentlist .even {
+    background-color: #f1bd76;
+    padding: 10px;
+    margin-bottom: 10px;
+}

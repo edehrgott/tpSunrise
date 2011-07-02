@@ -13,7 +13,15 @@
 	   <h1><?php the_title(); ?></h1>
 	   <?php the_content(__('Read more', 'tpSunrise'));?>
 	   <!-- <?php trackback_rdf(); ?> -->
-	   <?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?>
+	   
+        <div class="page-link">
+            <?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=Page %'); ?>
+        </div>
+
+        <div class="edit-link">
+            <?php edit_post_link( __('Edit', 'tpSunrise'), '<p>', '</p>' ); ?> 
+        </div>
+
 	   <?php endwhile; else: ?>
 	   <p><?php _e('Sorry, no posts matched your criteria.', 'tpSunrise'); ?></p><?php endif; ?>
 	     

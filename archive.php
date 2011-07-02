@@ -22,7 +22,7 @@
 						<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 						<p>By <?php the_author(); ?><br />
 						<?php _e('Filed Under', 'tpSunrise'); ?>
-						<?php the_category(', ') ?>&nbsp;<?php the_tags(__('| Tagged With: ', 'tpSunrise'), ', ', ''); ?> | <?php edit_post_link('(Edit Post)', '', ''); ?> | <?php comments_popup_link(__('No Comments', 'tpSunrise') . '&#187;', __('1 Comment', 'tpSunrise') . '&#187', '% ' . __('Comments', 'tpSunrise') . '&#187'); ?></p>
+						<?php the_category(', ') ?>&nbsp;<?php the_tags(__('| Tagged With: ', 'tpSunrise'), ', ', ''); ?> | <?php edit_post_link('(Edit Post)', '', ''); ?> | <?php comments_popup_link(__('No Comments', 'tpSunrise') . '&#187;', __('1 Comment', 'tpSunrise') . '&#187;', '% ' . __('Comments', 'tpSunrise') . '&#187;'); ?></p>
 					</div>
 					
 					<div class="post-content">
@@ -33,7 +33,8 @@
 					</div>
 						
 					<!-- <?php trackback_rdf(); ?> -->
-					<?php wp_link_pages();?>
+					<?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=Page %'); ?>
+				      <?php edit_post_link( __('Edit', 'tpSunrise'), '<p>', '</p>' ); ?> 					
 				</div>	
 				<?php endwhile; else: ?>
 					

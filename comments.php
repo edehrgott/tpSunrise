@@ -1,6 +1,6 @@
 <div id="comments">
 <?php if ( post_password_required() ) : ?>
-				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'tpSunrise' ); ?></p>
+		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'tpSunrise' ); ?></p>
 </div><!-- #comments -->
 <?php
 		/* Stop the rest of comments.php from being processed,
@@ -16,19 +16,9 @@
 ?>
 
 <?php if (have_comments()): ?>
-	<h4 id="comments">
+	<h4 class="numcomments">
 		<?php comments_number(__('No Comments', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise'));?>
 	</h4>
-	
-	<div class="pagenav">
-		<div class="alignleft">
-			<?php previous_comments_link() ?>
-		</div>
-		<div class="alignright">
-			<?php next_comments_link() ?>
-		</div>
-		<br/>
-	</div>
 	
 	<ol class="commentlist">
 		<?php wp_list_comments(); ?>
@@ -36,12 +26,25 @@
 	<div class="pagenav">
 		<?php paginate_comments_links(); ?>
 	</div>
+    
+    <div class="pagenav">
+        <div class="alignleft">
+            <?php previous_comments_link() ?>
+        </div>
+        <div class="alignright">
+            <?php next_comments_link() ?>
+        </div>
+        <br/>
+    </div>
+    
 <?php else: // this is displayed if there are no comments so far ?>
 
 	<?php if (comments_open()): // If comments are open, but there are no comments. ?>
 	
-	<?php else: // comments are closed ?>
+	<?php else: // comments are closed
+		if ( comments_open() ) : ?>
 		<p class="nocomments"><?php _e('Comments are closed.', 'tpSunrise');?></p>
+		<?php endif; ?>
 	<?php endif; ?>
 	
 <?php endif; ?>
@@ -51,5 +54,3 @@
 
 
 </div>
-
-

@@ -21,7 +21,7 @@
 					<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 					<p>By <?php the_author(); ?><br />
 					Filed Under <?php the_category(', ') ?>&nbsp;<?php the_tags('| Tagged With: ', ', ', '<br />'); ?><br />
-					<?php edit_post_link('(Edit Post)', '', ''); ?> <strong>|</strong> <?php comments_popup_link(__('No Comments', 'tpSunrise') . '&#187;', __('1 Comment', 'tpSunrise') . '&#187', '% ' . __('Comments', 'tpSunrise') . '&#187'); ?></p>
+					<?php edit_post_link('(Edit Post)', '', ''); ?> <strong>|</strong> <?php comments_popup_link(__('No Comments', 'tpSunrise') . '&#187;', __('1 Comment', 'tpSunrise') . '&#187;', '% ' . __('Comments', 'tpSunrise') . '&#187;'); ?></p>
 				</div>
 				<?php the_content(__('Read more', 'tpSunrise'));?>
 					
