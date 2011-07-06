@@ -40,14 +40,7 @@
 					<p><?php posts_nav_link(); ?></p>
 				</div>
 				
-			</div> <!--page content-->
-				
+            </div> <!-- page content -->
 		</div> <!-- container -->
 		
-    <?php get_footer(); ?>
-	
-	</div> <!-- wrapper2 -->  
-</div> <!-- wrapper1 -->
-
-</body>
-</html>
+		<?php get_footer(); ?>

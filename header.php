@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
-<!--<title><?php wp_title( '-', true, 'right' ); echo esc_html( get_bloginfo('name'), 1 ); ?></title>-->
 <meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 <title>
 <?php if (function_exists('is_tag') && is_tag()) {
@@ -31,25 +30,31 @@ echo ' - page '. $paged;
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+wp_enqueue_script('superfish-init', get_bloginfo('template_directory') . '/js/superfish-init.js');
 
-<script type="text/javascript">
-// initialise superfish menu
-jQuery(function(){
-	jQuery('ul.sf-menu').superfish();
-});
-</script>
+$options = get_option('tpSunrise_options');
+if ( 'blank' == get_header_textcolor() ) { ?>
+	  <style type="text/css">
+	  #header_text h1 a {display: none;}
+	  #header_text .description {display: none;}
+	  </style>
+<?php } else { ?>  
+	  <style type="text/css">
+	  #header_text h1 a {color: #<?php echo get_header_textcolor() ?>;}
+	  #header_text .description {color: #<?php echo get_header_textcolor() ?>;}
+	  </style>
+<?php } 
 	
-<?php wp_head(); ?>
-    
+wp_head(); ?>
+   
 </head>
 
 <body <?php body_class(); ?>>
 
 <div id="masthead">
-	<?php
-	$options = get_option('tpSunrise_options');
-	if ($options['use_alt_header']) {;  //we're using alternate images for all but home page
+
+	<?php if ($options['use_alt_header']) {;  //we're using alternate images for all but home page
 		    if( (is_front_page()) ) {  // for home and sub page headers ?>
 			    <!-- home_logo -->
 			    <img id="headerimg" src="<?php get_header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Header image alt text" />

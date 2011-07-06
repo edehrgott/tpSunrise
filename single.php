@@ -19,7 +19,7 @@
 					</div>
 						
 					<div class="contenttitle">
-						<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+						<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title('','',0) ? the_title() : _e('Untitled Post', 'tpSunrise'); ?></a></h1>
 						<p>By <?php the_author(); ?><br />
 						<?php _e('Filed Under', 'tpSunrise'); ?>
 						<?php the_category(', ') ?>&nbsp;<?php the_tags(__('| Tagged With: ', 'tpSunrise'), ', ', ''); ?> | <?php edit_post_link('(Edit Post)', '', ''); ?> | <?php comments_popup_link(__('No Comments', 'tpSunrise') . '&#187;', __('1 Comment', 'tpSunrise') . '&#187;', '% ' . __('Comments', 'tpSunrise') . '&#187;'); ?></p>
@@ -55,13 +55,7 @@
 				
 				<?php comments_template(); // Get wp-comments.php template ?>
 						
-            </div> <!-- page content -->
+             </div> <!-- page content -->
 		</div> <!-- container -->
 		
-    <?php get_footer(); ?>
-	
-	</div> <!-- wrapper2 -->  
-</div> <!-- wrapper1 -->
-
-</body>
-</html>
+		<?php get_footer(); ?>

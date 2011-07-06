@@ -28,10 +28,6 @@
 	   <?php comments_template(); // Get wp-comments.php template ?>
 	   
 	   </div> <!-- page content -->
-	</div> <!-- container -->
-	<?php get_footer(); ?>
-   </div> <!-- wrapper2 -->  
-</div> <!-- wrapper1 -->
-
-</body>
-</html>
+	   </div> <!-- container -->
+	   
+	   <?php get_footer(); ?>
