@@ -13,24 +13,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*** common styling ***/
 body {
     background: #fff;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: #646464;
 	font-style: normal;
 	font-weight: normal;
 	font-size: small;
 }
 h1 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: #646464;
 	font-size: large;
 }
 h2 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: #646464;
 	font-size: medium;
 }
 h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: #646464;
 	font-size: small;
 }
@@ -82,6 +82,12 @@ table td {
 	padding: 2px;
 	border-style: solid;
 	border-color: #180509;
+}
+ins {
+	background: #ffc;
+	border: none;
+	color: #333;
+	text-decoration: none;
 }
 /*** page layout div styling ***/
 #masthead {
@@ -436,35 +442,37 @@ blockquote{
 	border-top: 2px solid #000000;
 	border-bottom: 1px solid #000000;
 }
-.contentdate {
-	background: url(images/cal.png);
-	float: left;
-	width: 45px;
-	height: 50px;
-	margin: 0 10px 0 0;
-	padding: 0;
+.contentdate {    
+   background: url(images/cal.png);
+   float: left;
+   width: 45px;
+   height: 50px;
+   margin: 0 10px 0 0;
+   padding: 0;
 }
 .contentdate h3 {
-	color: #FFFFFF;
-	font-size: 10px;
-	font-weight: normal;
-	padding: 1px 0px 0px 4px;
-	margin: 0px;
-	text-transform: uppercase;
+   font-family: Arial, Helvetica, sans-serif;
+   color: #FFFFFF;
+   font-size: 10px;
+   font-weight: normal;
+   padding: 1px 0px 0px 4px;
+   margin: 0px;
+   text-transform: uppercase;
 }
 .contentdate h4 {
-	color: #666666;
-	font-size: 21px;
-	font-weight: bold;
-	padding: 5px 4px 0px 0px;
-	margin: 0px;
-	text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   color: #666666;
+   font-size: 21px;
+   font-weight: bold;
+   padding: 5px 4px 0px 0px;
+   margin: 0px;
+   text-align: center;
 }
 .contenttitle {
-	position: relative;
-	margin: 0px;
-	padding: 0px;
-	color: #000000;
+   position: relative;
+   margin: 0px;
+   padding: 0px;
+   color: #000000;
 }
 .postspace {
 	background: url(images/spacer.png);
@@ -472,6 +480,7 @@ blockquote{
 	height: 32px;
 	margin: 0px;
 	padding: 0px;
+	clear: both;
 }
 .sticky {
 	background: #F5DEB3;
@@ -479,17 +488,22 @@ blockquote{
 }
 /*** comment styling ***/
 .commentlist ul {
-    list-style: none;    
+   list-style: none;    
 }
 .commentlist .odd {
-    background-color: #F9DFA9;
-    padding: 10px;
-    margin-bottom: 10px;
+   background-color: #F9DFA9;
+   padding: 10px;
+   margin-bottom: 10px;
 }
 .commentlist .even {
-    background-color: #f1bd76;
-    padding: 10px;
-    margin-bottom: 10px;
+   background-color: #f1bd76;
+   padding: 10px;
+   margin-bottom: 10px;
+}
+.commentlist .bypostauthor {
+   border-style: solid;
+   border-width: 1px;
+   padding: 4px;
 }
 .comment-form-comment label {
    display: block;

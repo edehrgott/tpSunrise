@@ -23,8 +23,10 @@
 						<p>By <?php the_author(); ?><br />
 						Filed Under <?php the_category(', ') ?>&nbsp;<?php the_tags(' | ' . __('Tagged With: ', 'tpSunrise'), ', ', ''); ?> | <?php edit_post_link('(Edit Post)', '', ''); ?> | <?php comments_popup_link(__('No Comments', 'tpSunrise') . '&#187;', __('1 Comment', 'tpSunrise') . '&#187;', '% ' . __('Comments', 'tpSunrise') . '&#187;'); ?></p>
 					</div>
+					<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
 					<div class="post-content">
-					<?php the_content(__('Read more', 'tpSunrise')); ?>
+				      <?php the_content(__('Read more', 'tpSunrise'));
+					?>
 					</div>
 					<!-- <?php trackback_rdf(); ?> -->
 					

@@ -31,7 +31,7 @@ echo ' - page '. $paged;
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-wp_enqueue_script('superfish-init', get_bloginfo('template_directory') . '/js/superfish-init.js');
+wp_enqueue_script('superfish-init', get_template_directory_uri() . '/js/superfish-init.js');
 
 $options = get_option('tpSunrise_options');
 if ( 'blank' == get_header_textcolor() ) { ?>
@@ -44,7 +44,18 @@ if ( 'blank' == get_header_textcolor() ) { ?>
 	  #header_text h1 a {color: #<?php echo get_header_textcolor() ?>;}
 	  #header_text .description {color: #<?php echo get_header_textcolor() ?>;}
 	  </style>
-<?php } 
+<?php }
+
+// get alternate styling for home page
+if( (is_front_page()) ) {  // for home page only
+	  if ($options['use_alt_home_style']) { ?>
+		    <!-- alternate home page styling -->
+		    <style type="text/css">
+		    <?php echo $options['alt_home_style_text']; ?>
+		    </style>
+
+	  <?php }
+}
 	
 wp_head(); ?>
    
@@ -54,10 +65,10 @@ wp_head(); ?>
 
 <div id="masthead">
 
-	<?php if ($options['use_alt_header']) {;  //we're using alternate images for all but home page
+	<?php if ($options['use_alt_header']) {  //we're using alternate images for all but home page
 		    if( (is_front_page()) ) {  // for home and sub page headers ?>
 			    <!-- home_logo -->
-			    <img id="headerimg" src="<?php get_header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Header image alt text" />
+			    <img id="headerimg" src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Header image alt text" />
 			    <div id="header_text">
 			    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			    <h2 class="description"><?php bloginfo( 'description' ); ?></h2>

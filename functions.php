@@ -38,8 +38,8 @@ wp_enqueue_script('jquery');
 // nav menus use superfish
 if ( !is_admin() ) { //superfish scripts aren't needed for admin area
 	// register the scripts
-	wp_register_script('superfish', get_bloginfo('template_directory') . '/js/superfish.js' );
-	wp_register_script('hoverIntent', get_bloginfo('template_directory') . '/js/hoverIntent.js' );
+	wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js' );
+	wp_register_script('hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js' );
 	// enqueue the scripts
 	wp_enqueue_script('superfish');   
 	wp_enqueue_script('hoverIntent');
@@ -129,5 +129,9 @@ endif;
 add_action( 'after_setup_theme', 'tpSunrise_customisetheme_setup' );
 
 add_filter('gallery_style', create_function('$a', 'return preg_replace("%<style type=\'text/css\'>(.*?)</style>%s", "", $a);'));
+
+add_theme_support( 'post-thumbnails' );
+
+add_editor_style()
 
 ?>

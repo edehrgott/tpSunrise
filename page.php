@@ -11,6 +11,7 @@
 	   <div id="page_content">
 	   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	   <h1><?php the_title(); ?></h1>
+	   <?php the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
 	   <?php the_content(__('Read more', 'tpSunrise'));?>
 	   <!-- <?php trackback_rdf(); ?> -->
 	   
