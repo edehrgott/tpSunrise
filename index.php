@@ -25,6 +25,26 @@
 					</div>
 					<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
 					<div class="post-content">
+
+					  <?php if ( 'gallery' == get_post_format( get_the_ID() ) ) : 
+						    $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
+						    if ( $images ) :
+							    $total_images = count( $images );
+							    $image = array_shift( $images );
+							    $image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+						    ?>
+
+						    <figure class="gallery-thumb">
+							    <a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+						    </figure><!-- .gallery-thumb -->
+
+						    <p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s image</a>.', 'This gallery contains <a %1$s>%2$s images</a>.', $total_images, 'tpSunrise' ),
+								    'href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'tpSunrise' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+								    number_format_i18n( $total_images )
+							    ); ?></em></p>
+						    <?php endif; ?>
+
+				      <?php endif; ?>
 				      <?php the_content(__('Read more', 'tpSunrise'));
 					?>
 					</div>

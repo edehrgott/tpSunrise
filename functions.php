@@ -48,6 +48,8 @@ if ( !is_admin() ) { //superfish scripts aren't needed for admin area
 add_action( 'init', 'tpSunrise_register_menus' );
 
 add_theme_support('automatic-feed-links');
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
 load_theme_textdomain( 'tpSunrise', TEMPLATEPATH . '/languages' );  //i18n
 
@@ -128,9 +130,8 @@ endif;
 //Execute custom theme functionality
 add_action( 'after_setup_theme', 'tpSunrise_customisetheme_setup' );
 
-add_filter('gallery_style', create_function('$a', 'return preg_replace("%<style type=\'text/css\'>(.*?)</style>%s", "", $a);'));
-
-add_theme_support( 'post-thumbnails' );
+// fix gallery shortcode validation error
+add_filter( 'use_default_gallery_style', '__return_false' );
 
 add_editor_style()
 

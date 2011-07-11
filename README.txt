@@ -36,6 +36,9 @@ The theme also supports alternative styling for the sub pages. Sub page styling 
 theme options. Be sure to check the alternative styling option and specify the CSS that will override the home
 page default styles. Any valid CSS statements can be used here.
 
+For minor styling changes please edit custom.css rather than styles.css. Any styling in custom.css will take
+prededent over styles.css and ease the process of theme updating.
+
 Since this is a variable width theme, please pay attention to the width of images. I suggest that you modify
 the settings/media section of the administrative area to disply medium images at no more than 500x500 and large
 images at no more than 900x900. Keep in mind that large images may not display as inended on screens less than 1024

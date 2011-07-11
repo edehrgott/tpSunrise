@@ -5,11 +5,10 @@
  * Version: 1.1
  * Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
  * Author URI: http://www.tekpals.com
- * Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu, custom header, theme options
+ * Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu, custom-header, custom-background, translation-ready, editor-style, sticky-post, theme-options
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
-
 
 /*** common styling ***/
 body {
@@ -373,6 +372,24 @@ li.sfHover > a > .sf-sub-indicator {
 }
 /*** end navigation section ***/
 /*** WordPress image styling ***/
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
 .alignleft, img.alignleft, a img.alignleft {
 	display: block;
 	float: left;
@@ -385,56 +402,88 @@ li.sfHover > a > .sf-sub-indicator {
 	padding-left: 5px;
 	border: none;
 }
-.aligncenter {
+.aligncenter, img.aligncenter, a img.aligncenter {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	border: none;
 }
-.wp-caption {
-	border: 1px solid #ddd;
-	text-align: center;
-	background-color: #f3f3f3;
-	padding-top: 4px;
-	margin: 10px;}.wp-caption img {
-	margin: 0;
-	padding: 0;
-	border: 0 none;
-}
-.wp-caption p.wp-caption-text {
-	font-size: 11px;
-	line-height: 17px;
-	padding: 0 4px 5px;
-	margin: 0;
-}
-.gallery-caption {
-	border: 1px solid #ddd;
-	text-align: center;
-	background-color: #f3f3f3;
-	padding-top: 4px;
-	margin: 10px;
-}
+
 /*** WordPress gallery styling ***/
-#gallery-1 {
-	margin: auto;
+/* The Gallery container (div) */
+.gallery { }
+ 
+/* A Gallery item container,
+ for 3, 2, 4, & 6 column galleries */
+.gallery .gallery-item { }
+.gallery-columns-2 .gallery-item { }
+.gallery-columns-4 .gallery-item { }
+.gallery-columns-5 .gallery-item { }
+.gallery-columns-6 .gallery-item { }
+
+/* The actual image inside a container
+for 3, 2, 4, 5 & 6 column galleries */
+.gallery img { }
+.gallery-columns-2 .attachment-medium { }
+.gallery-columns-4 .attachment-thumbnail { }
+.gallery-columns-5 .attachment-thumbnail { }
+.gallery-columns-6 .attachment-thumbnail { }
+ 
+/* A gallery image caption */
+.gallery .gallery-caption { }
+ 
+/* Definition lists elements */
+.gallery dl, .gallery dt { }
+ 
+/* Pick the second line break if two
+line breaks are adjacent */
+.gallery br+br { }
+
+.gallery { margin: 0 auto 18px; }
+.gallery .gallery-item {
+    float: left;
+    margin-top: 15px;
+    text-align: center;
+    width: 33%;
 }
-#gallery-1 .gallery-item {
-	float: left;
-	margin-top: 10px;
-	text-align: center;
-	width: auto;
+.gallery-columns-2 .gallery-item { width: 50%; }
+.gallery-columns-4 .gallery-item { width: 25%; }
+.gallery-columns-5 .gallery-item { width: 20%; }
+.gallery-columns-6 .gallery-item { width: 16%; }
+.gallery img {
+    box-shadow: 0px 0px 4px #999;
+    border: 1px solid white;
+    padding: 8px;
+    background: #f2f2f2;
 }
-#gallery-1 img {
-	border: 2px solid #cfcfcf;
+.gallery img:hover {
+    background: white;
 }
-#gallery-1 .gallery-caption {
-	margin-left: 0;
+.gallery-columns-2 .attachment-medium {
+    max-width: 92%;
+    height: auto;
 }
-.wp-caption img {
-	margin: 0;
-	padding: 0;
-	border: 0 none;
+.gallery-columns-4 .attachment-thumbnail {
+    max-width: 84%;
+    height: auto;
 }
+.gallery-columns-5 .attachment-thumbnail {
+    max-width: 78%;
+    height: auto;
+}
+.gallery-columns-6 .attachment-thumbnail {
+    max-width: 72%;
+    height: auto;
+}
+.gallery .gallery-caption {
+    color: #888;
+    font-size: 12px;
+    margin: 0 0 12px;
+}
+
+.gallery dl, .gallery dt { margin: 0; }
+.gallery br+br { display: none; }
+
 /*** other WordPress styling ***/
 blockquote{
 	margin: 0px 25px 15px 25px;
