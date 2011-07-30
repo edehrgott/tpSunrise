@@ -12,7 +12,7 @@
 			  'orderby' => 'name', 
 			  'order' => 'ASC', 
 			  'show_count' => 0, 
-			  'title_li' => '<h3 class="widget-title">' . __('Categories') . '</h3>', // standard tpSunrise sidebar title
+			  'title_li' => '<h3 class="widget-title">' . __('Categories', 'tpSunrise' ) . '</h3>', // standard tpSunrise sidebar title
 		    )); ?>	
 		<li id="archives" class="widget-container">
 		    <h3 class="widget-title"><?php _e( 'Archives', 'tpSunrise' ); ?></h3>

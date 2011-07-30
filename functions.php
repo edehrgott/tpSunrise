@@ -66,7 +66,7 @@ if ( !function_exists('tpSunrise_customisetheme_setup') ):
     function tpSunrise_customisetheme_setup() {
         //Define default header image
 	  if ( ! defined( 'HEADER_TEXTCOLOR' ) )
-		define( 'HEADER_TEXTCOLOR', '' );
+		define( 'HEADER_TEXTCOLOR', '#fffff4' );
 
 	  // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
 	  if ( ! defined( 'HEADER_IMAGE' ) )
@@ -76,6 +76,7 @@ if ( !function_exists('tpSunrise_customisetheme_setup') ):
         //Define the width and height of our header image
         define( 'HEADER_IMAGE_WIDTH', apply_filters( 'tpSunrise_header_image_width', 940 ) );
         define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'tpSunrise_header_image_height', 200 ) );
+
 	  
 	  // We'll be using post thumbnails for custom header images on posts and pages.
 	  // We want them to be 940 pixels wide by 200 pixels tall.

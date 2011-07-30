@@ -20,21 +20,22 @@ OR
 tpSunrise is a is a 3 column theme with a vertical menu on the left. The theme supports 2 widgetized sidebars 
 on the right and a flexible center column that automatically adjusts for the current browser window width.
 
-The theme automatically supports customizing the header image, title existence and title font color.
+The theme automatically supports customizing the header image, title text display and title font color.
 
 This theme supports an optional alternative header for sub pages. This allows the home page to feature a large
 graphic header and sub pages to use space a bit more efficiently. This feature can be activated under appearance/
-theme options. Be sure to specify an alternate header image and a color for the blog title text. A sample alternate
-header graphic is located in the theme image directory at tpSunrise_alt_header_sample.png.
+theme options. Be sure to specify an alternate header image and a color for the blog title text. Sample alternate
+header graphics are located in the theme image directory at tpSunrise_alt_header_sample1.png and
+tpSunrise_alt_header_sample2.png.
 
-The theme uses one WordPress 3 menu and presents the menu as a vertical menu down the left sidebar. The theme uses 
+The theme uses one WordPress 3+ menu and presents the menu as a vertical menu down the left sidebar. The theme uses 
 an image (images/gradient31.gif) to style the menus; this does limit the length of the text for the menus. If you 
-prefer, you can remove or change the image to accommodate longer menu names. This left sidebar is intended for 
-navigation only and is not widgetized.
+prefer, you can remove or change the image to accommodate longer menu names or different color schemes. This left
+sidebar is intended for navigation only and is not widgetized.
 
-The theme also supports alternative styling for the sub pages. Sub page styling can be set in appearance/
-theme options. Be sure to check the alternative styling option and specify the CSS that will override the home
-page default styles. Any valid CSS statements can be used here.
+The theme also supports alternative styling for the sub (all except home) pages. Sub page styling can be set in
+appearance/theme options. Be sure to check the alternative styling option and specify the CSS that will override
+the home page default styles. Any valid CSS statements can be used here.
 
 For minor styling changes please edit custom.css rather than styles.css. Any styling in custom.css will take
 prededent over styles.css and ease the process of theme updating.
