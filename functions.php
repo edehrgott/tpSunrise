@@ -97,9 +97,9 @@ if ( !function_exists('tpSunrise_customisetheme_setup') ):
             ),
                 //Image 2
                 'desert' => array (
-                'url' => '%s/images/tpSunrise_desert.jpg',
-                'thumbnail_url' => '%s/images/tpSunrise_desert_thumb.jpg',
-                'description' => __( 'Desert', 'tpSunrise' )
+                'url' => '%s/images/tpSunrise_farm.jpg',
+                'thumbnail_url' => '%s/images/tpSunrise_farm_thumb.jpg',
+                'description' => __( 'Farm', 'tpSunrise' )
             ),
                 //Image 3
                 'sunrise' => array (
