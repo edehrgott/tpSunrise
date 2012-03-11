@@ -1,4 +1,7 @@
 tpSunrise WordPress Theme
+version 1.2.5
+6 Feb 2011
+Tested with WordPress version 3.3.1
 
 Author: Ed Ehrgott
 http://www.tekpals.com
@@ -36,6 +39,9 @@ sidebar is intended for navigation only and is not widgetized.
 The theme also supports alternative styling for the sub (all except home) pages. Sub page styling can be set in
 appearance/theme options. Be sure to check the alternative styling option and specify the CSS that will override
 the home page default styles. Any valid CSS statements can be used here.
+
+Version 1.2.4 adds a magazine style page template intended for the home page. This template will show typical
+page conent along with 4 of the most recent blog posts.
 
 For minor styling changes please edit custom.css rather than styles.css. Any styling in custom.css will take
 prededent over styles.css and ease the process of theme updating.

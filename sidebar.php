@@ -25,12 +25,12 @@
 	</div>
 
     <div id="sidebar-secondary">
-	  <ul>
 	  <?php
-	  if ( is_active_sidebar( 'sidebar-secondary' ) ) : dynamic_sidebar( 'sidebar-secondary' );
-	  // no default widgets for secondary
-	  endif; ?>
-	  </ul>
+	  if ( is_active_sidebar( 'sidebar-secondary' ) ) { ?>
+	   	  <ul>
+		  <?php dynamic_sidebar( 'sidebar-secondary' ); ?>
+		  </ul>
+	   <?php } ?>    
     </div>
     
     <?php wp_meta(); ?>

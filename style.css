@@ -2,7 +2,7 @@
  * Theme Name: tpSunrise
  * Theme URI: http://www.tekpals.com/tpsunrise
  * Description: tpSunrise is a 3 column theme with a vertical menu on the left. The theme supports a widgetized sidebar on right and a flexible center column that automatically adjusts for the window width. The theme supports different header and sidebar styles for the home page. Requires WordPress 3.0+
- * Version: 1.2.2
+ * Version: 1.2.6
  * Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
  * Author URI: http://www.tekpals.com
  * Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu, custom-header, custom-background, translation-ready, editor-style, sticky-post, theme-options
@@ -93,10 +93,11 @@ ins {
 #masthead {
     background: #180509;
 }
-#masthead h1 {
+#header_text {
 	position: absolute;
 	top: 35px;
 	left: 40px;
+	width: 950px;
 }
 #masthead a {
 	color: #fffff4;
@@ -104,11 +105,12 @@ ins {
 	text-decoration: none;
 }
 #masthead h2 {
-	position: absolute;
-	top: 85px;
-	left: 40px;
 	color: #fffff4;
 	font-size: 1.2em;
+}
+#headerimg {
+   margin-left: auto;
+   margin-right: auto;
 }
 /*** wrappers used to provide column effect ***/
 #wrapper1 {
@@ -167,10 +169,9 @@ ins {
     border-style: none;
 }
 #left_col ul {
-
-    font-size: 1.0em;
+	padding: 0px 0px 15px 0px;
+      font-size: 1.0em;
 	margin: 0px;
-	padding: 0px 0px 20px 0px;
 	}
 	
 #left_col ul li {
@@ -180,13 +181,13 @@ ins {
 	}
 	
 #left_col ul li a {
-	color: #507AA5;
+	color: #180509;
 	text-decoration: none;
 	}
 
 #left_col ul li a:hover {
-	color: #507AA5;
-	text-decoration: underline;
+	color: #180509;
+	font-weight: bold;
 	}
 
 #right_col {
@@ -283,7 +284,7 @@ ul.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul {
 	top: -999em;
 }
 ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul {
-	left: 10em; /* match ul width */
+	left: 13em; /* match ul width */
 	top: 0;
 }
 ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul {
@@ -328,7 +329,6 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul {
 .sf-vertical, .sf-vertical li li {
 	width: 200px;
 	position: relative;
-	z-index: 999;
 	overflow:visible !important;
 }
 /* this lacks ul at the start of the selector, so the styles from the main CSS file override it where needed */
@@ -377,7 +377,9 @@ li:hover > a > .sf-sub-indicator,
 li.sfHover > a > .sf-sub-indicator {
 	background-position: -10px -100px; /* arrow hovers for modern browsers*/
 }
-
+ul.sub-menu {
+   width: 215px;
+}
 /* point right for anchors in subs */
 .sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
 .sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
@@ -391,7 +393,7 @@ li.sfHover > a > .sf-sub-indicator {
 }
 .sf-shadow ul {
 	background:	url('images/shadow.png') no-repeat bottom right;
-	padding: 0 8px 9px 0;
+	padding: 0 85px 9px 0;
 	-moz-border-radius-bottomleft: 17px;
 	-moz-border-radius-topright: 17px;
 	-webkit-border-top-right-radius: 17px;
@@ -401,6 +403,36 @@ li.sfHover > a > .sf-sub-indicator {
 	background: transparent;
 }
 /*** end navigation section ***/
+
+/*** magazine page template styling ****/
+#recent_posts {
+    border-top: 1px solid #180509;
+    padding: 4px;
+}
+#recent_posts_meta {
+    font-size: 75%;
+}
+.recent_posts_title {
+    font-size: 130%;
+}
+.recent_posts_item {
+    width: 45%;
+    display: block;
+    border-bottom: 1px solid #180509;
+    padding: 10px 5px 10px 5px;
+}
+#recent_posts li {
+    list-style: none;
+    margin: 0 0 20px 0;
+}
+#recent_posts li:nth-child(even) {
+    float: left;
+    clear: both;
+}
+#recent_posts li:nth-child(odd) {
+    float: right;
+}
+
 /*** WordPress image styling ***/
 .wp-caption {
 	border: 1px solid #ddd;
@@ -510,9 +542,41 @@ line breaks are adjacent */
     font-size: 12px;
     margin: 0 0 12px;
 }
+.gallery dl, .gallery dt {
+    margin: 0;
+}
+.gallery br+br {
+    display: none;
+}
+.gallery-image-link a {
+   font-size: 2.0em;
+   text-decoration: none;
+   vertical-align: -35px;
+   color: #180509;
+}
 
-.gallery dl, .gallery dt { margin: 0; }
-.gallery br+br { display: none; }
+/*** aside styling ***/
+.format-aside h1 {
+   display: none;
+}
+.format-aside .contentdate {
+   display: none;
+}
+
+/*** link styling ***/
+.format-link .contentdate {
+   background: url(images/link-image.jpg);
+   width: 68px;
+}
+.format-link .contentdate h3 {
+   display: none;
+}
+.format-link .contentdate h4 {
+   display: none;
+}
+
+/*** ststus styling ***/
+
 
 /*** other WordPress styling ***/
 blockquote{

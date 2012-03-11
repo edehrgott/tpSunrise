@@ -1,8 +1,6 @@
 <?php
 
 // sidebars
-add_action( 'widgets_init', 'tpSunrise_register_sidebars' );
-
 function tpSunrise_register_sidebars() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
@@ -38,31 +36,52 @@ function tpSunrise_register_sidebars() {
 	) );	
 }
 
+add_action( 'widgets_init', 'tpSunrise_register_sidebars' );
+
 // navigation menu
 function tpSunrise_register_menus() {
 	register_nav_menus(array('primary' => __('Left Column Menu', 'tpSunrise')));
 }
 
-// theme requires jQuery
-wp_enqueue_script('jquery');
-
-// nav menus use superfish
-if ( !is_admin() ) { //superfish scripts aren't needed for admin area
-	// register the scripts
-	wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js' );
-	wp_register_script('hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js' );
-	// enqueue the scripts
-	wp_enqueue_script('superfish');   
-	wp_enqueue_script('hoverIntent');
-}
-
 add_action( 'init', 'tpSunrise_register_menus' );
 
-add_theme_support('automatic-feed-links');
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
+// register all scripts
+function tpSunrise_scripts() {
+	   // theme requires jQuery
+	   wp_enqueue_script( 'jquery' );
+	   wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js' );
+	   wp_register_script('superfish-init', get_template_directory_uri() . '/js/superfish-init.js');	
+	   wp_register_script('hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js' );
+	   // enqueue the scripts
+	   wp_enqueue_script( 'superfish' );
+	   wp_enqueue_script( 'superfish-init' );
+	   wp_enqueue_script( 'hoverIntent' );
+}
 
-load_theme_textdomain( 'tpSunrise', TEMPLATEPATH . '/languages' );  //i18n
+add_action( 'wp_enqueue_scripts', 'tpSunrise_scripts' );
+
+// theme support
+function tpSunrise_theme_support() {
+	   add_theme_support( 'automatic-feed-links' );
+	   add_theme_support( 'post-thumbnails' );
+	   add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery' ) );
+}
+
+add_action( 'after_setup_theme', 'tpSunrise_theme_support' );
+
+// custom.css
+function tpSunrise_register_styles() {
+	   wp_register_style( 'tpSunrise_custom', get_template_directory_uri() . '/custom.css' );
+}
+
+add_action( 'wp_enqueue_styles', 'tpSunrise_styles' );
+
+// i18n
+function tpSunrise_load_textdomain() {
+	   load_theme_textdomain( 'tpSunrise', get_template_directory() . '/languages' );
+}
+
+add_action( 'after_setup_theme', 'tpSunrise_load_textdomain' );
 
 if (! isset( $content_width )) $content_width = 700;
 

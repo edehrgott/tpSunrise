@@ -17,39 +17,35 @@
 
 <?php if (have_comments()): ?>
 	<h4 class="numcomments">
-		<?php comments_number(__('No Comments', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise'));?>
+		<?php comments_number(__('No Comments', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise')); ?>
 	</h4>
 	
 	<ol class="commentlist">
 		<?php wp_list_comments(); ?>
 	</ol>
+	
 	<div class="pagenav">
 		<?php paginate_comments_links(); ?>
 	</div>
     
     <div class="pagenav">
         <div class="alignleft">
-            <?php previous_comments_link() ?>
+            <?php previous_comments_link(); ?>
         </div>
         <div class="alignright">
-            <?php next_comments_link() ?>
+            <?php next_comments_link(); ?>
         </div>
         <br/>
     </div>
     
-<?php else: // this is displayed if there are no comments so far ?>
+    <?php if (!( comments_open() )) { 
+          _e(' Comments are closed', 'tpSunrise'); // only show commenta are closed if there are comments and comments are closed
+     } ?>    
 
-	<?php if (comments_open()): // If comments are open, but there are no comments. ?>
-	
-	<?php else: // comments are closed
-		if ( comments_open() ) : ?>
-		<p class="nocomments"><?php _e('Comments are closed.', 'tpSunrise');?></p>
-		<?php endif; ?>
-	<?php endif; ?>
-	
 <?php endif; ?>
-	
-<?php comment_form(); ?> 
-
+      
+<?php if ( comments_open() ): // If comments are open display the comment form. ?>
+	<?php comment_form(); ?>
+<?php endif; ?>
 
 </div>

@@ -12,14 +12,14 @@
 			
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div <?php post_class(); ?>  id="post-<?php the_ID(); ?>">
-
+				
 					<div class="contentdate">
 						<h3><?php the_time('M y'); ?></h3>
 						<h4><?php the_time('j'); ?></h4>
 					</div>
 						
 					<div class="contenttitle">
-						<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title('','',0) ? the_title() : _e('Untitled Post', 'tpSunrise'); ?></a></h1>
+						<?php echo "<h1>Go back to <a href='" . get_permalink($post->post_parent). "'>" . get_the_title($post->post_parent) ."</a></h1>"; ?>
 						<p>Posted by <?php the_author(); ?> on <?php the_time( get_option('date_format') ); ?><br />
 						Posted in <?php the_category(' &bull; ') ?>&nbsp;<?php the_tags(' | ' . __('Tagged With: ', 'tpSunrise'), ', ', ''); ?>
 						  <?php if ( comments_open() ) { ?>
@@ -30,34 +30,16 @@
 					</div>
 										
 					<div class="post-content">
-					  
-					  <?php if ( 'gallery' == get_post_format( get_the_ID() ) ) : 
-						    $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
-						    if ( $images ) :
-							    $total_images = count( $images );
-							    $image = array_shift( $images );
-							    $image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
-						    ?>
-
-						    <figure class="gallery-thumb">
-							    <a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
-						    </figure><!-- .gallery-thumb -->
-
-						    <p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s image</a>.', 'This gallery contains <a %1$s>%2$s images</a>.', $total_images, 'tpSunrise' ),
-								    'href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'tpSunrise' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
-								    number_format_i18n( $total_images )
-							    ); ?></em></p>
-						    <?php endif; ?>
-
-				      <?php endif; ?>					  
-					  
-					<?php the_content(__('Read more', 'tpSunrise')); ?>
+						<p><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?>
+						<?php the_content(__('Read more', 'tpSunrise')); ?>
+						</p>
 					</div>
+					
+					<div class="alignleft gallery-image-link"><?php previous_image_link( 0, '&laquo;' ) ?></div>
+					<div class="alignleft"><?php previous_image_link( array( 50, 50 )) ?></div>
 				    
-				    <div class="pagenav">
-						  <?php previous_post_link('<span class="center">&laquo; %link </span>'); ?>
-						  <?php next_post_link('<span class="center"> %link  &raquo;</span>'); ?>
-				    </div>
+					<div class="alignright gallery-image-link"><?php next_image_link( 0, '&raquo;' ) ?></div>
+					<div class="alignright"><?php next_image_link( array( 50, 50 )) ?></div>
 					
 					<div class="postspace">
 						

@@ -7,12 +7,12 @@
 	?>
 	</div>
     
-   <div id="sidebar-left">
-	  <ul>
+    <div id="sidebar-left">
 	  <?php
-	  if ( is_active_sidebar( 'sidebar-left' ) ) : dynamic_sidebar( 'sidebar-left' );
-	  // no default widgets
-	  endif; ?>
-	  </ul>
-	</div>    
+	  if ( is_active_sidebar( 'sidebar-left' ) ) { ?>
+	   	  <ul>
+		  <?php dynamic_sidebar( 'sidebar-left' ); ?>
+		  </ul>
+	   <?php } ?>
+    </div>
 </div> <!--left_col-->

@@ -20,14 +20,15 @@
 					
 					<div class="contenttitle">
 						<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title('','',0) ? the_title() : _e('Untitled Post', 'tpSunrise'); ?></a></h1>
-						<p>Posted by <?php the_author(); ?> on <?php the_time('F j, Y'); ?><br />
+						<p>Posted by <?php the_author(); ?> on <?php the_time( get_option('date_format') ); ?><br />
 						Posted in <?php the_category(' &bull; ') ?>&nbsp;<?php the_tags(' | ' . __('Tagged With: ', 'tpSunrise'), ', ', ''); ?>
-						<?php if ( comments_open() ) { ?>
-							| <?php comments_popup_link( __('No Comments yet, please leave one', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise'));
-						} ?></p>						
+						  <?php if ( comments_open() ) { ?>
+								  | <?php comments_popup_link( __('No Comments yet, please leave one', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise'), __('Comments are closed', 'tpSunrise'));
+							  } elseif (get_comments_number() > 0) { //don't show comment link if there are none & comments are off ?>
+								  | <?php comments_popup_link( __('No Comments', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise'), '', __('', 'tpSunrise'));	
+							  } ?></p>											
 					</div>
 					
-					<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
 					<div class="post-content">
 					  
 					  <?php if ( 'gallery' == get_post_format( get_the_ID() ) ) : 

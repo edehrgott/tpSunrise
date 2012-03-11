@@ -27,13 +27,11 @@ echo ' - page '. $paged;
 <?php if(is_search()) { ?>
 	<meta name="robots" content="noindex, nofollow" /> 
 <?php }?>
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/custom.css'; ?>" />
+<?php wp_enqueue_style( 'tpSunrise_custom', get_template_directory_uri() . '/custom.css' ); ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-wp_enqueue_script('superfish-init', get_template_directory_uri() . '/js/superfish-init.js');
 
 $options = get_option('tpSunrise_options');
 if ( 'blank' == get_header_textcolor() ) { ?>
