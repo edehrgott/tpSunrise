@@ -28,7 +28,7 @@
 								  | <?php comments_popup_link( __('No Comments', 'tpSunrise'), __('1 Comment', 'tpSunrise'), '% ' . __('Comments', 'tpSunrise'), '', __('', 'tpSunrise'));	
 							  } ?></p>									
 					</div>
-										
+															
 					<div class="post-content">
 					  
 					  <?php if ( 'gallery' == get_post_format( get_the_ID() ) ) : 
@@ -53,11 +53,6 @@
 					  
 					<?php the_content(__('Read more', 'tpSunrise')); ?>
 					</div>
-				    
-				    <div class="pagenav">
-						  <?php previous_post_link('<span class="center">&laquo; %link </span>'); ?>
-						  <?php next_post_link('<span class="center"> %link  &raquo;</span>'); ?>
-				    </div>
 					
 					<div class="postspace">
 						
@@ -71,11 +66,16 @@
 					
                     <div class="page-link">
                         <?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=Page %'); ?>
-                    </div>
-
+                    </div>			
+				
                     <div class="edit-link">
                         <?php edit_post_link( __('Edit', 'tpSunrise'), '<p>', '</p>' ); ?> 
-                    </div>                    
+                    </div>
+				
+			     <div class="pagenav">
+				    <?php previous_post_link('<span class="center">&laquo; %link </span>'); ?>
+				    <?php next_post_link('<span class="center"> %link  &raquo;</span>'); ?>
+			     </div>					
                     
 				</div>
 				

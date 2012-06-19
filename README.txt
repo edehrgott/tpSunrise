@@ -1,6 +1,6 @@
 tpSunrise WordPress Theme
-version 1.2.5
-6 Feb 2011
+version 1.2.7
+15 Mar 2012
 Tested with WordPress version 3.3.1
 
 Author: Ed Ehrgott
