@@ -2,7 +2,7 @@
  * Theme Name: tpSunrise
  * Theme URI: http://www.tekpals.com/tpsunrise
  * Description: tpSunrise is a 3 column theme with a vertical menu on the left. The theme supports a widgetized sidebar on right and a flexible center column that automatically adjusts for the window width. The theme supports different header and sidebar styles for the home page. Requires WordPress 3.0+
- * Version: 1.2.7
+ * Version: 1.2.8
  * Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
  * Author URI: http://www.tekpals.com
  * Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu, custom-header, custom-background, translation-ready, editor-style, sticky-post, theme-options
@@ -92,10 +92,12 @@ ins {
 /*** page layout div styling ***/
 #masthead {
     background: #180509;
+    position: relative;
+    height: auto;
 }
 #header_text {
 	position: absolute;
-	top: 35px;
+	top: 0px;
 	left: 40px;
 	width: 950px;
 }
@@ -111,6 +113,18 @@ ins {
 #headerimg {
    margin-left: auto;
    margin-right: auto;
+}
+#noheader_masthead a {
+	color: #fffff4;
+	font-size: 1.7em;
+	text-decoration: none;    
+}
+#masthead h2 {
+	color: #fffff4;
+	font-size: 1.2em;
+}
+#noheader_masthead #header_text {
+    position: relative;
 }
 /*** wrappers used to provide column effect ***/
 #wrapper1 {

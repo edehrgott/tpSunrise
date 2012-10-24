@@ -63,12 +63,21 @@ wp_head(); ?>
 
 <body <?php body_class(); ?>>
 
-<div id="masthead">
-
 	<?php if ($options['use_alt_header']) {  //we're using alternate images for all but home page
 		    if( (is_front_page()) ) {  // for home and sub page headers ?>
 			    <!-- home_logo -->
-			    <img id="headerimg" src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Header image alt text" />
+			    <?php $header_image = get_header_image();
+				if ( $header_image ) {
+				// Compatibility with versions of WordPress prior to 3.4.
+					if ( function_exists( 'get_custom_header' ) ) {
+						$header_image_width  = get_custom_header()->width;
+						$header_image_height = get_custom_header()->height;
+					} else {
+						$header_image_width  = HEADER_IMAGE_WIDTH;
+						$header_image_height = HEADER_IMAGE_HEIGHT;
+					} ?>
+					<img id="headerimg"src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+				<?php } ?>
 			    <div id="header_text">
 			    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			    <h2 class="description"><?php bloginfo( 'description' ); ?></h2>
@@ -80,11 +89,27 @@ wp_head(); ?>
 			    <h1><a style="color:<?php echo $options['textcolor']?>;" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		    <?php }
 	}else { // same image for all pages ?>
-		    <img id="headerimg" src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Header image alt text" />
+		    <!-- <img id="headerimg" src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Header image alt text" /> -->
+			<!-- home_logo -->
+			<?php $header_image = get_header_image();
+			 if ( $header_image ) {
+				echo '<div id="masthead">';
+				// Compatibility with versions of WordPress prior to 3.4.
+				 if ( function_exists( 'get_custom_header' ) ) {
+					 $header_image_width  = get_custom_header()->width;
+					 $header_image_height = get_custom_header()->height;
+				 } else {
+					 $header_image_width  = HEADER_IMAGE_WIDTH;
+					 $header_image_height = HEADER_IMAGE_HEIGHT;
+				 } ?>
+				 <img id="headerimg"src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+			 <?php } else {
+				echo '<div id="noheader_masthead">';
+			 } ?>
 		    <div id="header_text">
 		    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		    <h2 class="description"><?php bloginfo( 'description' ); ?></h2>
 		    </div> 
-	<?php }?>
+	<?php } ?>
 </div>
 

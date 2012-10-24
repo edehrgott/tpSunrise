@@ -71,7 +71,8 @@ add_action( 'after_setup_theme', 'tpSunrise_theme_support' );
 
 // custom.css
 function tpSunrise_register_styles() {
-	   wp_register_style( 'tpSunrise_custom', get_template_directory_uri() . '/custom.css' );
+	   wp_register_style( 'tpSunrise-custom', get_template_directory_uri() . '/custom.css' );
+	   wp_enqueue_style( 'tpSunrise-custom' );
 }
 
 add_action( 'wp_enqueue_styles', 'tpSunrise_styles' );
